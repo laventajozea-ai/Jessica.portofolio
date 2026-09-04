@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessica Angeline — Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --abyss: #051B2C;
+    --deep: #0A2E45;
+    --teal: #14746F;
+    --seafoam: #86D6CF;
+    --foam: #EEF9F7;
+    --coral: #FF8C61;
+    --sand: #F4E9D8;
+    --ink: #06202F;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background: var(--foam);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color: var(--abyss);
+  }
+
+  .mono{
+    font-family:'Space Mono', monospace;
+  }
+
+  a{ color:inherit; }
+
+  section{
+    padding: 6rem 8vw;
+    position:relative;
+  }
+
+  @media(max-width:720px){
+    section{ padding: 4rem 6vw; }
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:50;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 1.4rem 6vw;
+    mix-blend-mode:difference;
+  }
+
+  nav .brand{
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    font-weight:600;
+    color:#fff;
+  }
+
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:2rem;
+  }
+
+  nav a{
+    color:#fff;
+    text-decoration:none;
+    font-size:0.9rem;
+  }
+
+  @media(max-width:640px){
+    nav ul{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    height:100vh;
+    min-height:640px;
+    background: radial-gradient(120% 100% at 15% 0%, #0F4C5C 0%, var(--deep) 45%, var(--abyss) 100%);
+    color: var(--foam);
+    display:flex;
+    align-items:flex-end;
+    padding: 6rem 8vw 8rem;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .hero-caustics{
+    position:absolute;
+    inset:0;
+    opacity:0.35;
+    mix-blend-mode:screen;
+    pointer-events:none;
+  }
+
+  .hero-fish{
+    position:absolute;
+    right:8%;
+    top:18%;
+    width:min(30vw, 260px);
+    animation: driftFish 9s ease-in-out infinite;
+    opacity:0.9;
+  }
+
+  @keyframes driftFish{
+    0%,100%{ transform: translate(0,0) rotate(0deg); }
+    50%{ transform: translate(-16px, 22px) rotate(-4deg); }
+  }
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+    max-width: 780px;
+  }
+
+  .eyebrow-plain{
+    font-family:'Space Mono', monospace;
+    font-size:0.82rem;
+    color: var(--seafoam);
+    margin-bottom:1.2rem;
+  }
+
+  .hero h1{
+    font-size: clamp(2.6rem, 7vw, 5.2rem);
+    color:#fff;
+    line-height:1.02;
+  }
+
+  .hero h1 em{
+    font-style:italic;
+    color: var(--seafoam);
+  }
+
+  .hero p{
+    margin-top:1.6rem;
+    font-size:1.15rem;
+    max-width:520px;
+    color: #CFE8E4;
+  }
+
+  .wave-divider{
+    display:block;
+    width:100%;
+    line-height:0;
+  }
+
+  .wave-divider svg{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    background: var(--foam);
+    display:grid;
+    grid-template-columns: 1.1fr 1.4fr;
+    gap: 4rem;
+    align-items:start;
+  }
+
+  @media(max-width:820px){
+    .about{ grid-template-columns:1fr; }
+  }
+
+  .about-id{
+    background: var(--abyss);
+    color: var(--foam);
+    border-radius: 4px;
+    padding: 2rem;
+    position:relative;
+  }
+
+  .about-id::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background: linear-gradient(90deg, var(--seafoam), var(--coral));
+  }
+
+  .about-id dl{
+    display:grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.6rem 1.2rem;
+    font-size:0.92rem;
+    margin-top:1.2rem;
+  }
+
+  .about-id dt{
+    font-family:'Space Mono', monospace;
+    color: var(--seafoam);
+  }
+
+  .about h2{
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    margin-bottom:1.4rem;
+  }
+
+  .about p{
+    max-width: 58ch;
+    color: #234;
+    font-size:1.04rem;
+  }
+
+  .about p + p{ margin-top:1rem; }
+
+  /* ---------- KARATE ---------- */
+  .karate{
+    background: linear-gradient(180deg, var(--foam) 0%, #DDF0EC 100%);
+  }
+
+  .karate-head{
+    max-width: 620px;
+    margin-bottom: 3.2rem;
+  }
+
+  .belt-track{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 0.9rem;
+    align-items:flex-end;
+  }
+
+  .belt{
+    flex:1 1 90px;
+    min-width:70px;
+    text-align:center;
+  }
+
+  .belt-bar{
+    height: 14px;
+    border-radius:2px;
+    margin-bottom:0.6rem;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.12);
+  }
+
+  .belt-name{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    color:#3a5a58;
+  }
+
+  .belt.current .belt-bar{
+    height:22px;
+    box-shadow: 0 0 0 3px var(--abyss), inset 0 -3px 0 rgba(0,0,0,0.15);
+  }
+
+  .belt.current .belt-name{
+    color: var(--abyss);
+    font-weight:700;
+  }
+
+  .karate-note{
+    margin-top: 2.6rem;
+    display:flex;
+    gap:1.4rem;
+    align-items:flex-start;
+    max-width: 640px;
+  }
+
+  .karate-note .tag{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    background: var(--abyss);
+    color: var(--seafoam);
+    padding: 0.3rem 0.6rem;
+    border-radius:3px;
+    white-space:nowrap;
+    margin-top:0.2rem;
+  }
+
+  .karate-note p{ color:#234; }
+
+  /* ---------- CODE / GOALS ---------- */
+  .goals{
+    background: var(--abyss);
+    color: var(--foam);
+  }
+
+  .goals-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  @media(max-width:820px){
+    .goals-grid{ grid-template-columns:1fr; }
+  }
+
+  .goals h2{
+    color:#fff;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  }
+
+  .goals p{
+    color: #B9D8D4;
+    margin-top:1.2rem;
+    max-width: 52ch;
+  }
+
+  .terminal{
+    background: #04141F;
+    border: 1px solid #12403f;
+    border-radius: 6px;
+    padding: 1.6rem;
+    font-family:'Space Mono', monospace;
+    font-size:0.86rem;
+    color: #8FE3D3;
+    overflow:hidden;
+  }
+
+  .terminal .dots{
+    display:flex;
+    gap:6px;
+    margin-bottom:1rem;
+  }
+
+  .terminal .dots span{
+    width:9px; height:9px; border-radius:50%;
+    background:#2b5654;
+  }
+
+  .terminal .line{ margin-bottom:0.5rem; }
+  .terminal .prompt{ color: var(--coral); }
+  .terminal .comment{ color:#4f8b83; }
+
+  .interest-list{
+    margin-top: 1.6rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem;
+  }
+
+  .interest-list span{
+    font-family:'Space Mono', monospace;
+    font-size:0.78rem;
+    border: 1px solid #1e5652;
+    padding: 0.35rem 0.7rem;
+    border-radius: 3px;
+    color: var(--seafoam);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background: var(--abyss);
+    color: #6f9b96;
+    padding: 3rem 8vw 2.4rem;
+    border-top: 1px solid #103635;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:1rem;
+    font-size:0.86rem;
+  }
+
+  footer .brand{
+    font-family:'Fraunces', serif;
+    color: var(--foam);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Jessica Angeline</div>
+  <ul>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#karate">Karate</a></li>
+    <li><a href="#cita-cita">Cita-cita</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <svg class="hero-fish" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 60 C40 20, 110 20, 150 45 C170 30, 190 30, 190 45 C190 45, 175 55, 175 60 C175 65, 190 75, 190 75 C190 75, 170 75, 150 60 C110 90, 40 90, 20 60 Z" fill="#86D6CF" opacity="0.55"/>
+    <circle cx="55" cy="55" r="4" fill="#051B2C" opacity="0.6"/>
+  </svg>
+  <svg class="hero-caustics" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 100 Q 200 60 400 110 T 800 90" stroke="#86D6CF" stroke-width="1.5" fill="none"/>
+    <path d="M0 220 Q 220 180 420 230 T 800 210" stroke="#86D6CF" stroke-width="1" fill="none"/>
+    <path d="M0 340 Q 180 300 400 350 T 800 330" stroke="#FF8C61" stroke-width="1" fill="none" opacity="0.5"/>
+  </svg>
+  <div class="hero-content">
+    <p class="eyebrow-plain">portofolio &mdash; sija, smk n 2 depok sleman</p>
+    <h1>Menyelam ke dalam <em>kode</em>,<br>melangkah lewat <em>karate</em>.</h1>
+    <p>Halo, saya Jessica Angeline. Siswi kelas 10 Sistem Informasi Jaringan dan Aplikasi yang sedang membangun jalan menuju dunia programming, sambil terus melatih disiplin lewat karate.</p>
+  </div>
+</header>
+
+<div class="wave-divider" style="background:var(--abyss);">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0 C 240 70, 480 90, 720 55 C 960 20, 1200 40, 1440 10 L1440 90 L0 90 Z" fill="#EEF9F7"/>
+  </svg>
+</div>
+
+<section class="about" id="tentang">
+  <div class="about-id">
+    <span class="mono" style="color:#86D6CF; font-size:0.78rem;">biodata</span>
+    <h3 style="color:#fff; margin-top:0.4rem;">Jessica Angeline</h3>
+    <dl>
+      <dt>Sekolah</dt><dd>SMK N 2 Depok, Sleman</dd>
+      <dt>Kelas</dt><dd>10 &mdash; SIJA</dd>
+      <dt>Jurusan</dt><dd>Sistem Informasi Jaringan &amp; Aplikasi</dd>
+      <dt>Olahraga</dt><dd>Karate, sabuk coklat</dd>
+      <dt>Fokus</dt><dd>Belajar menjadi programmer</dd>
+    </dl>
+  </div>
+  <div>
+    <h2>Tentang saya</h2>
+    <p>Saya remaja yang senang mengeksplorasi dua dunia yang kelihatannya berbeda, tapi ternyata mirip: karate dan pemrograman. Keduanya sama-sama soal latihan berulang, kesabaran, dan naik tingkat sedikit demi sedikit.</p>
+    <p>Di sekolah, saya mengambil jurusan Sistem Informasi Jaringan dan Aplikasi (SIJA) karena tertarik memahami bagaimana jaringan, sistem, dan aplikasi bekerja di baliknya. Di luar sekolah, saya berlatih karate dan sudah mencapai sabuk coklat &mdash; satu langkah sebelum sabuk hitam.</p>
+    <p>Ke depannya, saya ingin menjadi programmer, membangun aplikasi atau sistem yang benar-benar berguna untuk orang lain.</p>
+  </div>
+</section>
+
+<section class="karate" id="karate">
+  <div class="karate-head">
+    <h2>Perjalanan karate</h2>
+    <p style="margin-top:0.8rem; color:#234;">Setiap sabuk menandai satu tingkat kedisiplinan baru. Saat ini saya berada di sabuk coklat, satu langkah menuju sabuk hitam.</p>
+  </div>
+
+  <div class="belt-track">
+    <div class="belt"><div class="belt-bar" style="background:#F5F5F0;"></div><div class="belt-name">Putih</div></div>
+    <div class="belt"><div class="belt-bar" style="background:#F2D449;"></div><div class="belt-name">Kuning</div></div>
+    <div class="belt"><div class="belt-bar" style="background:#F0A03C;"></div><div class="belt-name">Oranye</div></div>
+    <div class="belt"><div class="belt-bar" style="background:#5FA85A;"></div><div class="belt-name">Hijau</div></div>
+    <div class="belt"><div class="belt-bar" style="background:#4C7FC9;"></div><div class="belt-name">Biru</div></div>
+    <div class="belt"><div class="belt-bar" style="background:#8A5CB0;"></div><div class="belt-name">Ungu</div></div>
+    <div class="belt current"><div class="belt-bar" style="background:#7A4B2E;"></div><div class="belt-name">Coklat &mdash; saat ini</div></div>
+    <div class="belt" style="opacity:0.45;"><div class="belt-bar" style="background:#1A1A1A;"></div><div class="belt-name">Hitam</div></div>
+  </div>
+
+  <div class="karate-note">
+    <span class="tag">catatan</span>
+    <p>Karate mengajarkan saya untuk tetap tenang di bawah tekanan dan menghargai proses &mdash; sesuatu yang juga sangat berguna saat debugging kode yang tidak mau berjalan.</p>
+  </div>
+</section>
+
+<section class="goals" id="cita-cita">
+  <div class="goals-grid">
+    <div>
+      <h2>Menuju programmer</h2>
+      <p>Saya sedang di titik awal perjalanan ini: belajar dasar-dasar jaringan dan aplikasi di sekolah, sambil mengasah logika pemrograman sedikit demi sedikit di luar kelas.</p>
+      <p>Target saya adalah terus konsisten belajar, membangun proyek-proyek kecil, dan suatu hari bekerja sebagai programmer yang membuat sistem atau aplikasi yang benar-benar dipakai orang.</p>
+      <div class="interest-list">
+        <span>jaringan</span>
+        <span>aplikasi web</span>
+        <span>logika pemrograman</span>
+        <span>problem solving</span>
+      </div>
+    </div>
+    <div class="terminal">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <div class="line comment">// tentang-saya.js</div>
+      <div class="line"><span class="prompt">const</span> siswa = {</div>
+      <div class="line">&nbsp;&nbsp;nama: "Jessica Angeline",</div>
+      <div class="line">&nbsp;&nbsp;sekolah: "SMK N 2 Depok Sleman",</div>
+      <div class="line">&nbsp;&nbsp;kelas: "10 SIJA",</div>
+      <div class="line">&nbsp;&nbsp;karate: "sabuk coklat",</div>
+      <div class="line">&nbsp;&nbsp;citaCita: "programmer"</div>
+      <div class="line">};</div>
+      <div class="line" style="margin-top:0.8rem;"><span class="prompt">console</span>.log(<span style="color:#FF8C61;">"masih terus belajar..."</span>);</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Jessica Angeline</div>
+  <div>SMK N 2 Depok Sleman &middot; Kelas 10 SIJA</div>
+</footer>
+
+</body>
+</html># Jessica.portofolio
